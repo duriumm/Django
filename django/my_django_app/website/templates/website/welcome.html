@@ -1,0 +1,36 @@
+
+{% extends "base.html" %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+  <h1>Welcome to the main tibia helper website</h1>
+  <p>
+    This is the demo tibiahelper application
+    <em>Django stuff</em>
+    <a href="www.tibia.com">Tibia homepage</a>
+  </p>
+  <p>
+    {{message}}
+  </p>
+
+  
+  <a href="{% url 'list_all_creatures' %}">
+    Link to all creatures
+  </a>
+  <br>
+  <br>
+  <img src="static\website\png_image.png">
+
+  <h2>Creatures</h2>
+  <ul>
+    {% for creature in creatures %}
+      <li>
+        <a href="{% url 'get_creature_by_id' creature.id %}">
+          {{ creature.name }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+
+{% endblock %}

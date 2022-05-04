@@ -1,0 +1,37 @@
+
+{% extends "base.html" %}
+
+{% block title %}Creature list{% endblock %}
+
+{% block content %}
+  <h1>All creatures are listed here</h1>
+
+  <h2>Creatures</h2>
+  <ul>
+    {% for creature in creatures %}
+      <li>
+        <h3>{{ creature.name }}</h3>
+        <p>
+          Health: {{ creature.health }} <br>
+          Experience: {{ creature.experience }} <br>
+          Speed:{{ creature.speed }} <br>
+          Armor: {{ creature.armor }} <br>
+          maxdmg:{{ creature.maxdmg }} <br>
+          summon: {{ creature.summon }} <br>
+          convince: {{ creature.convince }} <br>
+          illusionable:{{ creature.illusionable }} <br>
+          killstounlock: {{ creature.killstounlock }} <br>
+          senseinvis: {{ creature.senseinvis }} <br>
+          dmgfromphysical:{{ creature.dmgfromphysical }} <br>
+          dmgfromdeath:{{ creature.dmgfromdeath }} <br>
+          dmgfromholy: {{ creature.dmgfromholy }} <br>
+          dmgfromice: {{ creature.dmgfromice }} <br>
+          dmgfromfire:{{ creature.dmgfromfire }} <br>
+          dmgfromenergy:{{ creature.dmgfromenergy }} <br>
+          dmgfromearth: {{ creature.dmgfromearth }} <br>
+          listofloot: {{ creature.listofloot }} <br>
+        </p>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
